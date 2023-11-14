@@ -28,7 +28,7 @@ export default function (props) {
   return (
     <div>
 
-<div class="bg-gray-200 sticky top-0 z-10">
+<div class="bg-white sticky top-0 z-10">
       <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div class="relative flex items-center justify-between">
          
@@ -57,36 +57,21 @@ export default function (props) {
                 Population
               </a>
             </li>
-            {/* <li>
-              <a
-                href="/"
-                aria-label="Product pricing"
-                title="Product pricing"
-                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                aria-label="About us"
-                title="About us"
-                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                About us
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                aria-label="Sign up"
-                title="Sign up"
-              >
-                Sign up
-              </a>
-            </li> */}
+          <li>
+          <div className=" mx-20 w-[90%]">
+    <div style={{display:"flex",width:"90%",}}   >
+      <input
+        type="Search"
+        placeholder="Search by country name"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ width: "100%", maxWidth: "400px", padding:"10px",outline:"none",borderRadius:"5px 5px 5px 5px",}}
+        className=' bg-gray-300'
+      
+      />
+      </div>
+    </div>
+          </li>
           </ul>
           <div class="lg:hidden">
             <button
@@ -165,7 +150,20 @@ export default function (props) {
                           Population
                         </a>
                       </li>
-                     
+                     <li>
+                     <div className=" w-[95%]">
+    <div style={{display:"flex",width:"90%",}}   >
+      <input
+        type="Search"
+        placeholder="Search by country name"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ width: "100%", maxWidth: "400px", margin: "10px 0",padding:"10px",outline:"none",borderRadius:"5px 5px 5px 5px"}}
+        className=' bg-gray-300'
+      />
+      </div>
+    </div>
+                     </li>
                     </ul>
                   </nav>
                 </div>
@@ -176,17 +174,7 @@ export default function (props) {
       </div>
     </div>
 
-    <div className=" mx-20 w-[80%]">
-    <div style={{display:"flex",width:"90%",}} >
-      <input
-        type="Search"
-        placeholder="Search by country name"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ width: "100%", maxWidth: "400px", margin: "10px 0",padding:"10px",outline:"none",borderRadius:"5px 5px 5px 5px"}}
-      />
-      </div>
-    </div>
+    
       
     <div className=" flex justify-evenly flex-wrap px-2 py-4 sm:max-w-xl md:max-w-full lg:max-w-screen-4xl md:px-24 lg:px-3 lg:py-10">
     {
