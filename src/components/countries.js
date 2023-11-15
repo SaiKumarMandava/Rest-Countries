@@ -21,8 +21,18 @@ export default function (props) {
     const filteredCountry = countries.filter((country) =>
 
     country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+
    
   );
+  // filteredCountry.sort((a,b)=>a>b?1:-1)
+  // localeCompare is used to compare strings in a locale-sensitive way, which means it will give you the correct alphabetical order. The localeCompare function returns a negative value if a should be sorted before b, a positive value if a should be sorted after b, and 0 if they are equal. This ensures that the array is sorted alphabetically based on the common property of each country's name.
+  
+    filteredCountry.sort((a, b) => a.name.common.localeCompare(b.name.common));
+  console.log(filteredCountry)
+  console.log(filteredCountry.length)
+  
+
+
  
     
   return (
@@ -71,6 +81,9 @@ export default function (props) {
       />
       </div>
     </div>
+          </li>
+          <li>
+            <div></div>
           </li>
           </ul>
           <div class="lg:hidden">
@@ -173,7 +186,7 @@ export default function (props) {
         </div>
       </div>
     </div>
-
+   
     
       
     <div className=" flex justify-evenly flex-wrap px-2 py-4 sm:max-w-xl md:max-w-full lg:max-w-screen-4xl md:px-24 lg:px-3 lg:py-10">
