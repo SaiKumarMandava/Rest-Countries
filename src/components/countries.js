@@ -190,6 +190,7 @@ export default function (props) {
     
       
     <div className=" flex justify-evenly flex-wrap px-2 py-4 sm:max-w-xl md:max-w-full lg:max-w-screen-4xl md:px-24 lg:px-3 lg:py-10">
+      {countries?.continents}
     {
        filteredCountry?.map((item, index) => (
             <div key={index} className="flex-shrink-0 w-80 lg:w-[26%] mb-16  transform  hover:shadow-sm transition-shadow duration-400">
@@ -207,6 +208,7 @@ export default function (props) {
                             className="inline-block mb-3 text-xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
                         >
                             {item?.name?.common}
+                            
                         </a>
                         <p className="mb-3 text-sm font-semibold tracking-wide">
                             {
@@ -243,7 +245,24 @@ export default function (props) {
                                     Capital <span className="text-gray-600 ml-7 py-2">:</span>
                                     <span className="text-gray-600 m-4 py-2">{item?.capital} </span>
                                 </p>
+                                <p
+                                    className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
+                                    aria-label="Category"
+                                    title=""
+                                >
+                                    Continent <span className="text-gray-600 ml-2 py-2">:</span>
+                                    <span className="text-gray-600 m-4 py-2">{item?.continents} </span>
+                                </p>
+                                <p
+                                    className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
+                                    aria-label="Category"
+                                    title=""
+                                >
+                                    Area <span className="text-gray-600 ml-11 py-2">:</span>
+                                    <span className="text-gray-600 m-4 py-2">{item?.area} </span>
+                                </p>
                             </p>
+                           
                         </p>
                         <a
                             href={item?.maps?.googleMaps}
@@ -252,6 +271,7 @@ export default function (props) {
                             target='blank' no-referrer>
                             Map
                         </a>
+                       
                     </div>
                 </div>
             </div>
