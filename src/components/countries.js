@@ -7,11 +7,13 @@ export default function (props) {
     const[countries,setCountries]=useState([])
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");  //search state
+    const [loading, setLoading] = useState(true);
     useEffect(()=>{
         axios.get(URL)
         .then((res)=>{
             
             setCountries(res.data)
+            setLoading(false)
            
         })
         .catch((error) => console.error('Error fetching data:', error));
@@ -190,8 +192,16 @@ export default function (props) {
     
       
     <div className=" flex justify-evenly flex-wrap px-2 py-4 sm:max-w-xl md:max-w-full lg:max-w-screen-4xl md:px-24 lg:px-3 lg:py-10">
-      {countries?.continents}
-    {
+      
+    { loading ? (
+               <div class="flex items-center justify-center h-screen">
+               <div class="relative">
+                   <div class="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+                   <div class="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-blue-500 animate-spin">
+                   </div>
+               </div>
+           </div>
+            ) :
        filteredCountry?.map((item, index) => (
             <div key={index} className="flex-shrink-0 w-80 lg:w-[26%] mb-16  transform  hover:shadow-sm transition-shadow duration-400">
                 <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
