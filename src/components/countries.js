@@ -204,12 +204,13 @@ export default function (props) {
                         <a
                             href="/"
                             aria-label="Category"
-                            title="Film It!"
+                            
                             className="inline-block mb-3 text-xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
                         >
                             {item?.name?.common}
                             
                         </a>
+                       
                         <p className="mb-3 text-sm font-semibold tracking-wide">
                             {
                                 item.currencies ? (
@@ -221,10 +222,17 @@ export default function (props) {
                                 )
                             }
                         </p>
-                        <p className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
+                      <div className=' relative'>
+                      <p className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
                            aria-label="Category"
                            title="">
-                            Time Zone :
+                            Official Name :
+                            <span className="text-gray-600 text-sm px-4">{item?.name?.official}</span>
+                        </p>
+                      <p className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
+                           aria-label="Category"
+                           title="">
+                            Time Zone <span className="text-gray-600 ml-5 py-2">:</span>
                             <span className="text-gray-600 text-sm px-4">{item?.timezones}</span>
                         </p>
                         <p className="mb-2 text-gray-700">
@@ -233,7 +241,7 @@ export default function (props) {
                                 aria-label="Category"
                                 title=""
                             >
-                                Population :
+                                Population <span className="text-gray-600 ml-5 py-2">:</span>
                                 <span className="text-gray-600 px-4 py-2">{item?.population} </span>
                             </p>
                             <p className="mb-2 text-gray-700">
@@ -242,7 +250,7 @@ export default function (props) {
                                     aria-label="Category"
                                     title=""
                                 >
-                                    Capital <span className="text-gray-600 ml-7 py-2">:</span>
+                                    Capital <span className="text-gray-600 ml-12 py-2">:</span>
                                     <span className="text-gray-600 m-4 py-2">{item?.capital} </span>
                                 </p>
                                 <p
@@ -250,7 +258,7 @@ export default function (props) {
                                     aria-label="Category"
                                     title=""
                                 >
-                                    Continent <span className="text-gray-600 ml-2 py-2">:</span>
+                                    Continent <span className="text-gray-600 ml-7 py-2">:</span>
                                     <span className="text-gray-600 m-4 py-2">{item?.continents} </span>
                                 </p>
                                 <p
@@ -258,20 +266,42 @@ export default function (props) {
                                     aria-label="Category"
                                     title=""
                                 >
-                                    Area <span className="text-gray-600 ml-11 py-2">:</span>
+                                    Area <span className="text-gray-600 ml-[66px] py-2">:</span>
                                     <span className="text-gray-600 m-4 py-2">{item?.area} </span>
                                 </p>
                             </p>
                            
                         </p>
-                        <a
+                      </div>
+                        <p className=' absolute top-[264px] right-4 rounded-full'>
+                        <img
+                        src={item?.coatOfArms?.png}
+                        className="object-fit w-18 h-12 text-sm"
+                        alt="Coat Of Arms"
+                    />
+                        </p>
+                      <div className=' flex justify-between'>
+                      <a
                             href={item?.maps?.googleMaps}
                             aria-label=""
                             className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
                             target='blank' no-referrer>
-                            Map
+                              <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                          Country Map
+                          </button>
                         </a>
-                       
+                        <a
+                            href={item?.maps?.openStreetMaps}
+                            aria-label=""
+                            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                            target='blank' no-referrer>
+                              <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                          Street Map
+                          </button>
+                    
+                        </a>
+                    
+                    </div>
                     </div>
                 </div>
             </div>
