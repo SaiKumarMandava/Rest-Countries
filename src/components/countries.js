@@ -26,9 +26,12 @@ export default function (props) {
 
    
   );
+
+  
   // filteredCountry.sort((a,b)=>a>b?1:-1)
   // localeCompare is used to compare strings in a locale-sensitive way, which means it will give you the correct alphabetical order. The localeCompare function returns a negative value if a should be sorted before b, a positive value if a should be sorted after b, and 0 if they are equal. This ensures that the array is sorted alphabetically based on the common property of each country's name.
   
+
     filteredCountry.sort((a, b) => a.name.common.localeCompare(b.name.common));
   console.log(filteredCountry)
   console.log(filteredCountry.length)
